@@ -1,2 +1,2 @@
 *** Variables ***
-${BASE_URL}    https://compassuolfront.serverest.dev
+${BASE_URL}      https://front.serverest.dev
