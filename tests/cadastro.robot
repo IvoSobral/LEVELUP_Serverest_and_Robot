@@ -15,7 +15,7 @@ Cadastrar Usuario dinamico com sucesso
     [Documentation]    Cadastra um novo usuário com sucesso.
     Criar Usuario Dinamico 
     Go To signup page
-    Go to signup form          
+    Go to signup form        
 Cadastrar Usuario Estatico  
     Go To signup page
     Go to signup form  

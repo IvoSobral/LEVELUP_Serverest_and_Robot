@@ -37,14 +37,16 @@ Criar Usuario Dinamico
 
     Click    css=.btn.btn-primary >> text=Cadastrar
 
-    Wait For Elements State    css=div.jumbotron h1    state=visible    timeout=5000ms
-    Get Text                   css=div.jumbotron h1   equal     Serverest Store 
+    Wait For Elements State    css=div.alert.alert-primary a.alert-link    state=visible    timeout=5000ms
+    Get Text    css=div.alert.alert-primary a.alert-link    equal    Cadastro realizado com sucesso
     
     ${usuario_criado}=    Create Dictionary
     ...    nome=${nome_completo}
     ...    email=${email}
     ...    password=${senha}
     RETURN    ${usuario_criado}
+
+
 
 
 
@@ -93,15 +95,19 @@ Criar Usuario Estatico com email invalido (sem @)
     Fill Text    css=input[name=nome]    ${nomeEstatico}
     Fill Text    css=input[name=email]    ${emailinvalido}
     Fill Text    css=input[name=password]    ${senha}
-    
+   
     Click    css=button[type=submit] >> text=Cadastrar
-    
+     Sleep  1
 
     ${user}=    Create Dictionary
     ...    name=${nomeEstatico}
     ...    email=${emailinvalido}
     ...    password=${senha}
     RETURN    ${user}
+    ${ok}=    Evaluate JavaScript    ${emailinvalido}    element => element.checkValidity()
+    Should Not Be True    ${ok}
+    Notice should be email sem @    Inclua um "@" no endereço de email.    ${emailinvalido}
+    
 
 Criar Usuario Estatico com email invalido (sem .)
     [Documentation]   
