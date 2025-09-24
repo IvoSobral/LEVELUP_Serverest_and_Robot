@@ -36,6 +36,6 @@ Deve limpar a lista de produtos
     [Tags]    products
 
     Request Add    ${product_data}[nome]
-    Go To    ${BASE_URL}minhaListaDeProdutos
+    Go To    ${BASE_URL}/minhaListaDeProdutos
     Click    [data-testid="limparLista"]
     Get Text    [data-testid="shopping-cart-empty-message"]    ==    Seu carrinho está vazio
