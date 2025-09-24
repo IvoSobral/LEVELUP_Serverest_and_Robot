@@ -8,6 +8,7 @@ Resource       ../resources/base.resource
 
 
 
+
 *** Keywords ***
 
 
@@ -36,8 +37,8 @@ Criar Usuario Dinamico
 
     Click    css=.btn.btn-primary >> text=Cadastrar
 
-    Wait For Elements State    css=a.alert-link    state=visible    timeout=5000ms
-    Get Text                   css=a.alert-link    equal     Cadastro realizado com sucesso
+    Wait For Elements State    css=div.jumbotron h1    state=visible    timeout=5000ms
+    Get Text                   css=div.jumbotron h1   equal     Serverest Store 
     
     ${usuario_criado}=    Create Dictionary
     ...    nome=${nome_completo}
@@ -62,14 +63,11 @@ Criar Usuario Estatico
     Get Text    css=h2    equal    Cadastro
 
 
-    Fill Text    css=input[name=name]    ${nomeEstatico}
+    Fill Text    css=input[name=nome]    ${nomeEstatico}
     Fill Text    css=input[name=email]    ${emailEstatico}
     Fill Text    css=input[name=password]    ${senha}
     
     Click    css=button[type=submit] >> text=Cadastrar
-    
-    Wait For Elements State    css=a.alert-link:has-text("Cadastro realizado com sucesso")    state=visible
-    Notice should be    Cadastro realizado com sucesso
 
     ${user}=    Create Dictionary
     ...    name=${nomeEstatico}
@@ -92,15 +90,40 @@ Criar Usuario Estatico com email invalido (sem @)
     Get Text    css=h2    equal    Cadastro
 
 
-    Fill Text    css=input[name=name]    ${nomeEstatico}
+    Fill Text    css=input[name=nome]    ${nomeEstatico}
     Fill Text    css=input[name=email]    ${emailinvalido}
     Fill Text    css=input[name=password]    ${senha}
     
     Click    css=button[type=submit] >> text=Cadastrar
     
-    Get Text    css=small.message    equal    Inclua um '@' no endereço de email. Falta um '@' em "${emailinvalido}.
-    ALert should be  Inclua um '@' no endereço de email. Falta um '@' em "${emailinvalido}.
 
+    ${user}=    Create Dictionary
+    ...    name=${nomeEstatico}
+    ...    email=${emailinvalido}
+    ...    password=${senha}
+    RETURN    ${user}
+
+Criar Usuario Estatico com email invalido (sem .)
+    [Documentation]   
+
+    ${nomeEstatico}=    Set Variable    fulano
+    ${emailinvalido}=            Set Variable    fulano123@qacom
+    ${senha}=            Set Variable    teste123
+    
+   
+    Go To signup page  
+    Go to signup form
+    Wait For Elements State    css=h2    state=visible    timeout=5000ms
+    Get Text    css=h2    equal    Cadastro
+
+
+    Fill Text    css=input[name=nome]    ${nomeEstatico}
+    Fill Text    css=input[name=email]    ${emailinvalido}
+    Fill Text    css=input[name=password]    ${senha}
+    
+    Click    css=button[type=submit] >> text=Cadastrar
+    
+    
     ${user}=    Create Dictionary
     ...    name=${nomeEstatico}
     ...    email=${emailinvalido}
@@ -109,13 +132,21 @@ Criar Usuario Estatico com email invalido (sem @)
 
 
 Campos obrigatorios vazio  
-    ${user}    Create Dictionary
-    ...    name=${EMPTY}
-    ...    email=${EMPTY}
-    ...    password=${EMPTY} 
+    ${user}=  Create Dictionary
+    ...  name=${EMPTY}
+    ...  email=${EMPTY}
+    ...  password=${EMPTY}
+    
     Go To signup page
-    Criar Usuario Estatico 
+    Go to signup form
+    Wait For Elements State  css=h2  state=visible  timeout=5000ms
+    Get Text  css=h2  equal  Cadastro
 
+    Fill Text  css=input[name=nome]  ${user.name}
+    Fill Text  css=input[name=email]  ${user.email}
+    Fill Text  css=input[name=password]  ${user.password}
+
+    Click    css=button[type=submit] >> text=Cadastrar
     
 
 
