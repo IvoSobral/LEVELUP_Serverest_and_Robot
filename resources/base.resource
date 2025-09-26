@@ -13,10 +13,6 @@ Start Session
     New Browser    browser=chromium    headless=False
     New Page       ${BASE_URL}
 
-Take Screenshot
-    ${timestamp}       Get Time    epoch
-    Take Screenshot    screenshot_${timestamp}
-
 Get Fixtures
     [Arguments]    ${file_name}    ${scenario}
 
