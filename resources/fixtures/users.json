@@ -1,0 +1,14 @@
+{
+  "common": {
+    "nome": "Usuario Comum Teste",
+    "email": "user.comum@compassuol.com", 
+    "password": "UserPass123",
+    "administrador": "false"
+  },
+  "admin": {
+    "nome": "Usuario Admin Teste",
+    "email": "admin.teste@compassuol.com",
+    "password": "AdminPass123",
+    "administrador": "true"
+  }
+}
