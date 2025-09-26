@@ -1,7 +1,6 @@
 *** Settings ***
 Library    Browser
 Library    JSONLibrary
-Library    libs/api.py
 Library    Collections
 Resource    env.resource
 Resource    pages/LoginPage.resource
