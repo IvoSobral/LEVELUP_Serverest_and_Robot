@@ -2,6 +2,9 @@
 Library    Browser
 Library    JSONLibrary
 Library    Collections
+
+Library    libs/api.py
+
 Resource    env.resource
 Resource    pages/LoginPage.resource
 Resource    pages/ProductPage.resource
@@ -9,7 +12,6 @@ Resource       ../resources/env.resource
 Resource       ../resources/components/Alert.resource
 Resource       ../resources/components/Notice.resource
 Resource       ../resources/components/Header.resource
-Resource       ../tests/online.robot
 Resource       ../resources/cadastroKeyword.resource
 Resource        ../resources/backup/pages.resource
 

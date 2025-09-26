@@ -10,7 +10,7 @@ Submit Login Form
     Fill Text    input[name="password"]    ${user}[password]
     Click    button[type="submit"]
 
-User Should Be Logged In
+User Should Be Logged In Products
     Wait For Elements State    css=h1 >> text=Serverest Store    visible    5
 
 Request Add

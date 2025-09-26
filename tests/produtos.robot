@@ -15,12 +15,12 @@ Deve excluir produto
     Go To  ${BASE_URL}/login
 
     #Login
-    Fill text  css=input[name=email]     fulano123@qa.com
-    Fill text  css=input[name=password]  teste123
+    Fill text  css=input[name=email]     admin.teste@compassuol.com
+    Fill text  css=input[name=password]  AdminPass123
     Click      css=button[type=submit]
 
     Click      css=[data-testid=listarProdutos]
-    Click      xpath=//table//tr[td[text()="Teclado"]]//button[contains(@class,"btn-danger")]
+    Click      xpath=//table//tr[td[text()="Mouse Gamer RGB"]]//button[contains(@class,"btn-danger")]
 
     Sleep  1s
     Wait Until Keyword Succeeds    5x    1s    Verificar Produto Excluido
@@ -30,9 +30,9 @@ Deve Clicar no Botão Editar
     Go To  ${BASE_URL}/login
 
     #Login
-    Fill text  css=input[name=email]  fulano123@qa.com
-    Fill text  css=input[name=password]  teste123
+    Fill text  css=input[name=email]  admin.teste@compassuol.com
+    Fill text  css=input[name=password]  AdminPass123
     Click      css=button[type=submit]
 
     Click      css=[data-testid=listarProdutos]
-    Click      xpath=//table//tr[td[text()="Mouse"]]//button[contains(@class,"btn-info")]
+    Click      xpath=//table//tr[td[text()="Logitech MX Vertical"]]//button[contains(@class,"btn-info")]

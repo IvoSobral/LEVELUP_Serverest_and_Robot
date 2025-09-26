@@ -1,8 +1,8 @@
 *** Settings ***
 Library           Browser
 Documentation    Componente de Alertas
-Resource    ../resources/base.resource
-Resource    ../resources/env.resource
+Resource    ../../resources/base.resource
+Resource    ../../resources/env.resource
 
 
 *** Keywords ***

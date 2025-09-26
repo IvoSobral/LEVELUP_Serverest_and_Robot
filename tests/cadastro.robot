@@ -5,7 +5,7 @@ Library           FakerLibrary
 Resource          ../resources/base.resource 
 Resource           ../resources/env.resource
 Test Setup        Start Session
-Test Teardown     Take Page Screenshot
+Test Teardown     Take Screenshot
 
 
 *** Test Cases ***

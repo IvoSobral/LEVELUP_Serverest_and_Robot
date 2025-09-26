@@ -22,7 +22,7 @@ Setup Suite Environment
     Start Session
     ${user}=    Get Fixtures    users    common
     Submit Login Form    ${user}
-    User Should Be Logged In
+    User Should Be Logged In Products
 
     ${product_data}=    Get Fixtures    products    produto_mouse
     Set Suite Variable    ${product_data}
