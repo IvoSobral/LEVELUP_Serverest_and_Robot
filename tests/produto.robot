@@ -24,6 +24,8 @@ Fazer cadastro como administrador
     #clica em Cadastrar
     Click    //*[@id="root"]/div/div/form/div[5]/button
 
+    Sleep    3
+
 Login no site e criação de um produto
     Start Session
     Go To    ${BASE_URL}/login
