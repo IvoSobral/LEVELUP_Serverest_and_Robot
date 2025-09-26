@@ -1,0 +1,28 @@
+{
+  "endpoints": {
+    "usuarios": {
+      "path": "/usuarios",
+      "criar": {
+        "metodo": "POST",
+        "payload": {
+          "nome": "Usuário Teste",
+          "email": "usuario@qa.com",
+          "password": "<senha_teste>",
+          "administrador": "false"
+        },
+        "status_esperado": 201
+      },
+      "criarAdmin": {
+      "path": "/usuarios",
+        "metodo": "POST",
+        "payload": {
+          "nome": "Usuário Teste",
+          "email": "admin@qa.com",
+          "password": "<senha_teste>",
+          "administrador": "true"
+        },
+        "status_esperado": 201
+      }
+    }
+  }
+}
