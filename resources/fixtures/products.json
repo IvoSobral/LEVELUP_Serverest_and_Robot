@@ -1,0 +1,8 @@
+{
+  "produto_mouse": {
+    "nome": "Mouse Gamer RGB",
+    "preco": 150,
+    "descricao": "Mouse para jogos com iluminação RGB",
+    "quantidade": 25
+  }
+}
